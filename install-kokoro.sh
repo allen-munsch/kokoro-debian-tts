@@ -4,6 +4,8 @@
 # This script can be run multiple times safely
 # Uses user systemd service to access PulseAudio properly
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 set -e
 
 echo "=== Installing Kokoro TTS (Complete Edition) ==="
@@ -139,25 +141,22 @@ fi
 echo ""
 echo "7. Creating TTS server script..."
 
-
-if [ ! -f "kokoro-tts-server.py" ]; then
-    echo "Error: kokoro-tts-server.py not found in current directory"
+if [ ! -f "$SCRIPT_DIR/kokoro-tts-server.py" ]; then
+    echo "Error: kokoro-tts-server.py not found in $SCRIPT_DIR"
     exit 1
 fi
-cp -f kokoro-tts-server.py "$KOKORO_DIR/kokoro-tts-server.py"
-
+cp -f "$SCRIPT_DIR/kokoro-tts-server.py" "$KOKORO_DIR/kokoro-tts-server.py"
 chmod +x "$KOKORO_DIR/kokoro-tts-server.py"
 
 # Create Speech Dispatcher module script
 echo ""
 echo "8. Creating Speech Dispatcher module..."
 
-if [ ! -f "kokoro-speechd.sh" ]; then
-    echo "Error: kokoro-speechd.sh not found in current directory"
+if [ ! -f "$SCRIPT_DIR/kokoro-speechd.sh" ]; then
+    echo "Error: kokoro-speechd.sh not found in $SCRIPT_DIR"
     exit 1
 fi
-cp -f kokoro-speechd.sh "$KOKORO_DIR/kokoro-speechd.sh"
-
+cp -f "$SCRIPT_DIR/kokoro-speechd.sh" "$KOKORO_DIR/kokoro-speechd.sh"
 chmod +x "$KOKORO_DIR/kokoro-speechd.sh"
 
 # Create user systemd service (runs in user session with PulseAudio access)

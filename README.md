@@ -53,6 +53,9 @@ kokoro-direct "Quick test"
 
 # Use espeak-ng instead
 spd-say -o espeak-ng "Testing espeak"
+
+# Use spd-say as a pipe
+cat test.txt | spd-say -e
 ```
 
 ### Available Voices
