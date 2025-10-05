@@ -1,6 +1,6 @@
 # Kokoro TTS for Debian/Ubuntu
 
-Complete installation scripts for [Kokoro TTS](https://github.com/hexgrad/Kokoro-82M) with Speech Dispatcher integration on Debian-based Linux systems.
+Complete installation scripts for [Kokoro TTS](https://github.com/nazdridoy/kokoro-tts) with Speech Dispatcher integration on Debian-based Linux systems.
 
 Kokoro is a high-quality, open-weight text-to-speech model with 82 million parameters that delivers natural-sounding speech in multiple languages.
 
@@ -190,7 +190,7 @@ pw-play/paplay/aplay → Audio output
 
 ## Credits
 
-- [Kokoro-82M](https://github.com/hexgrad/Kokoro-82M) - The TTS model
+- [Kokoro-82M](https://github.com/nazdridoy/kokoro-tts) - The TTS model
 - [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx) - ONNX runtime wrapper
 - Speech Dispatcher - System TTS framework
 
